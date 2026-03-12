@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FPSInput : MonoBehaviour
 {
-    public float speed = 3.0f;
+    public float speed = 4.0f;
     public float gravity = -9.8f;
 
     //create a variable that references the character controller
@@ -20,15 +20,15 @@ public class FPSInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float deltaX = Input.GetAxis("Horizontal") * speed; //* Time.deltaTime;
-        float deltaZ = Input.GetAxis("Vertical") * speed; //* Time.deltaTime;
-        //transform.Translate(deltaX, 0, deltaZ);
+        float deltaX = Input.GetAxis("Horizontal") * speed;
+        float deltaZ = Input.GetAxis("Vertical") * speed; 
 
         //instead of moving the player using transform translate, use the character controller
         Vector3 movement = new Vector3(deltaX, 0, deltaZ);
 
         //ensures the player doesn't move too fast
         movement = Vector3.ClampMagnitude(movement, speed);
+
 
         //apply gravity 
         movement.y = gravity;
