@@ -7,6 +7,11 @@ public class RayShooter : MonoBehaviour
     //private variable that has a reference to the camera
     private Camera cam;
 
+    //for camera zoom
+    [SerializeField] private float zoomFOV;
+    [SerializeField] private float normalFOV;
+    [SerializeField] private float zoomSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +21,24 @@ public class RayShooter : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        float targetFOV;
+
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            targetFOV = zoomFOV;
+        } else
+        {
+            targetFOV = normalFOV;
+
+        }
+
+        cam.fieldOfView = targetFOV;
+
         //run the following code of the player clicks the left mouse button
         if (Input.GetMouseButtonDown(0)){
             ///use a Vector3 to store the location of the middle of the screen

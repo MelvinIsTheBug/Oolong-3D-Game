@@ -37,7 +37,7 @@ public class RelativeMovement : MonoBehaviour
         Vector3 movement = Vector3.zero;
 
         float horInput = Input.GetAxis("Horizontal");
-        float vertInput = Input.GetAxis("Horizontal");
+        float vertInput = Input.GetAxis("Vertical");
 
         //only handle movement while arrow keys are pressed
         if (horInput != 0 || vertInput != 0)
