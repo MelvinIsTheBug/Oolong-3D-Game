@@ -5,12 +5,14 @@ using UnityEngine;
 public class RayShooter : MonoBehaviour
 {
     //private variable that has a reference to the camera
+    //public Vector3 startPosition;
     private Camera cam;
 
     //for camera zoom
     [SerializeField] private float zoomFOV;
     [SerializeField] private float normalFOV;
     [SerializeField] private float zoomSpeed;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,8 @@ public class RayShooter : MonoBehaviour
         //Hide the cursor at the center of the screen
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        //transform.position = new Vector3(0, 0, 0);
         
     }
 
@@ -28,9 +32,11 @@ public class RayShooter : MonoBehaviour
     {
         float targetFOV;
 
+
         if (Input.GetKey(KeyCode.Mouse1))
         {
             targetFOV = zoomFOV;
+            
         } else
         {
             targetFOV = normalFOV;
@@ -38,6 +44,8 @@ public class RayShooter : MonoBehaviour
         }
 
         cam.fieldOfView = targetFOV;
+
+
 
         //run the following code of the player clicks the left mouse button
         if (Input.GetMouseButtonDown(0)){

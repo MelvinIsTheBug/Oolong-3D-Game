@@ -36,6 +36,7 @@ public class RelativeMovement : MonoBehaviour
         ///start with vector (0,0,0) and asdd movement components progressively 
         Vector3 movement = Vector3.zero;
 
+
         float horInput = Input.GetAxis("Horizontal");
         float vertInput = Input.GetAxis("Vertical");
 
