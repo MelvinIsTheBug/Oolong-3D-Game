@@ -40,6 +40,17 @@ public class RelativeMovement : MonoBehaviour
         float horInput = Input.GetAxis("Horizontal");
         float vertInput = Input.GetAxis("Vertical");
 
+        float speed;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            moveSpeed = 14.0f;
+            
+        } else
+        {
+            moveSpeed = 6.0f;
+
+        }
+
         //only handle movement while arrow keys are pressed
         if (horInput != 0 || vertInput != 0)
         {
@@ -90,6 +101,5 @@ public class RelativeMovement : MonoBehaviour
 
             movement *= Time.deltaTime;
             _charController.Move(movement);
-
     }
 }
