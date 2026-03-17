@@ -6,6 +6,7 @@ using UnityEngine;
 public class RelativeMovement : MonoBehaviour
 {
     public float moveSpeed = 6.0f;
+    public float runSpeed = 16.0f;
 
     public float jumpspeed = 20.0f;
     public float gravity = -9.8f;
@@ -39,6 +40,8 @@ public class RelativeMovement : MonoBehaviour
 
         float horInput = Input.GetAxis("Horizontal");
         float vertInput = Input.GetAxis("Vertical");
+
+       
 
         //only handle movement while arrow keys are pressed
         if (horInput != 0 || vertInput != 0)
@@ -76,7 +79,18 @@ public class RelativeMovement : MonoBehaviour
                 } else
                 {
                     _vertSpeed = minFall;
+                } 
+                  //movement speed changes if Left Shift is pressed when player is grounded
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    moveSpeed = runSpeed;
+            
+                } else
+                {
+                    moveSpeed = 6.0f;
+
                 }
+                
             } else
             {
                 //if not on the ground, then apply gravity until terminal velocity is reached
@@ -90,6 +104,5 @@ public class RelativeMovement : MonoBehaviour
 
             movement *= Time.deltaTime;
             _charController.Move(movement);
-
     }
 }
