@@ -1266,9 +1266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0b7f2b20c75ac4ab8461cba728f256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomFOV: 10
-  normalFOV: 30
-  zoomSpeed: 7
 --- !u!114 &2089123157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,6 +1280,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 285042700}
   rotSpeed: 1.5
+  zoomFOV: 12
+  normalFOV: 30
+  zoomSpeed: 0
   minimumVert: -45
   maximumVert: 45
 --- !u!1001 &3247080706329187477
@@ -1431,12 +1431,16 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8555077646689039544, guid: fd02b234c42424545a62ce3e5b983274, type: 3}
+      propertyPath: runSpeed
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8555077646689039544, guid: fd02b234c42424545a62ce3e5b983274, type: 3}
       propertyPath: jumpspeed
       value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 8555077646689039544, guid: fd02b234c42424545a62ce3e5b983274, type: 3}
       propertyPath: moveSpeed
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8555077646689039544, guid: fd02b234c42424545a62ce3e5b983274, type: 3}
       propertyPath: terminalVelocity

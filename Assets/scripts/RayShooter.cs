@@ -9,9 +9,9 @@ public class RayShooter : MonoBehaviour
     private Camera cam;
 
     //for camera zoom
-    [SerializeField] private float zoomFOV;
+    /*[SerializeField] private float zoomFOV;
     [SerializeField] private float normalFOV;
-    [SerializeField] private float zoomSpeed;
+    [SerializeField] private float zoomSpeed; */
 
 
     // Start is called before the first frame update
@@ -30,6 +30,7 @@ public class RayShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         float targetFOV;
 
 
@@ -43,7 +44,7 @@ public class RayShooter : MonoBehaviour
 
         }
 
-        cam.fieldOfView = targetFOV;
+        cam.fieldOfView = targetFOV; */
 
 
 
