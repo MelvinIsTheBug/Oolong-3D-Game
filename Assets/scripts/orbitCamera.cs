@@ -22,7 +22,7 @@ public class orbitCamera : MonoBehaviour
     private Vector3 _offset;
 
     ///limits vertical rotation of camera
-    public float minimumVert = -1f;
+    public float minimumVert = 45f;
 
     public float maximumVert = 45f;
 
