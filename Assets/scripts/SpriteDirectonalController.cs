@@ -7,7 +7,7 @@ public class SpriteDirectonalController : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
     [Range(0f, 180f)][SerializeField] float backAngle = 65f;
     [Range(0f, 180f)][SerializeField] float sideAngle = 155f;
-    [SerializeField] float speedThreshold = 0.1f;
+    // [SerializeField] float speedThreshold = 0.1f;
     void LateUpdate()
     {
         
