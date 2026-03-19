@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RayShooter : MonoBehaviour
 {
+    
+    [SerializeField] private AudioClip gunshot;
+    
     //private variable that has a reference to the camera
     //public Vector3 startPosition;
     private Camera cam;
@@ -85,6 +88,10 @@ public class RayShooter : MonoBehaviour
                 {
                     StartCoroutine(SphereIndicator(hit.point));
                 }
+
+                //plays sound 
+                SoundManager.instance.PlaySoundClip(gunshot, transform, 1f);
+
             }
 
         }
