@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class RelativeMovement : MonoBehaviour
 {
+    [SerializeField] private AudioClip jumpsound;
+
     public float moveSpeed = 6.0f;
     public float runSpeed = 16.0f;
 
@@ -76,6 +78,9 @@ public class RelativeMovement : MonoBehaviour
                 if (Input.GetButton("Jump"))
                 {
                     _vertSpeed=jumpspeed;
+
+                    // play sound 
+                    SoundManager.instance.PlaySoundClip(jumpsound, transform, 1f);
                 } else
                 {
                     _vertSpeed = minFall;
