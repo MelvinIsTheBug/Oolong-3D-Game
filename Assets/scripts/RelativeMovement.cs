@@ -19,14 +19,25 @@ public class RelativeMovement : MonoBehaviour
 
     private CharacterController _charController;
 
+    ///
+    //
+    private bool allowedToMove;
+    public void SetMovement(bool b)
+    {
+        allowedToMove = b;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
         _charController = GetComponent<CharacterController>();
         //initialize the vertical speed to the minimum falling speed at the start of the existign function
         _vertSpeed = minFall;
+        allowedToMove = true;
     }
 
+    
     //this script needs a reference to the object to move relative to
     [SerializeField] private Transform target;
 
@@ -36,7 +47,9 @@ public class RelativeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ///start with vector (0,0,0) and asdd movement components progressively 
+        if (allowedToMove)
+        {
+             ///start with vector (0,0,0) and asdd movement components progressively 
         Vector3 movement = Vector3.zero;
 
 
@@ -109,5 +122,8 @@ public class RelativeMovement : MonoBehaviour
 
             movement *= Time.deltaTime;
             _charController.Move(movement);
+            
+        }
+       
     }
 }
