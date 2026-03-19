@@ -11,6 +11,13 @@ public class RayShooter : MonoBehaviour
     //public Vector3 startPosition;
     private Camera cam;
 
+    private bool allowedToShoot;
+
+    public void SetShooting(bool b)
+    {
+        allowedToShoot = b;
+    }
+
     //for camera zoom
     /*[SerializeField] private float zoomFOV;
     [SerializeField] private float normalFOV;
@@ -20,6 +27,7 @@ public class RayShooter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        allowedToShoot = true;
         cam = GetComponent<Camera>();
 
         //Hide the cursor at the center of the screen
@@ -52,7 +60,7 @@ public class RayShooter : MonoBehaviour
 
 
         //run the following code of the player clicks the left mouse button
-        if (Input.GetMouseButtonDown(0)){
+        if (Input.GetMouseButtonDown(0) && allowedToShoot){
             ///use a Vector3 to store the location of the middle of the screen
             ///  divide the width and height by 2 to get the midpoint; these become 
             /// the x and y values of the vector, with the z value being zero
@@ -86,7 +94,7 @@ public class RayShooter : MonoBehaviour
                     target.ReactToHit();
                 } else
                 {
-                    StartCoroutine(SphereIndicator(hit.point));
+                    //StartCoroutine(SphereIndicator(hit.point));
                 }
 
                 //plays sound 
@@ -117,7 +125,7 @@ public class RayShooter : MonoBehaviour
             ///coroutine 
             /// this places a sphere at a set of coords, then 
             /// removes the sphere after 1 second
-            private IEnumerator SphereIndicator(Vector3 pos) {
+            /*private IEnumerator SphereIndicator(Vector3 pos) {
                 //create a new game object that's a sphere
                 GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 
@@ -129,5 +137,5 @@ public class RayShooter : MonoBehaviour
 
                 //then destroy the sphere
                 Destroy(sphere);
-            }
+            }*/
 }
