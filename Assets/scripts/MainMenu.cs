@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
     // Called when Play button is clicked
     public void PlayGame()
     {
-        SceneManager.LoadScene("test map"); // <-- change to your group scene name
+        SceneManager.LoadScene("game world"); // <-- change to your group scene name
     }
 
     // Called when Quit button is clicked
