@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class PlayerCharacter : MonoBehaviour
 {
@@ -34,7 +35,8 @@ public class PlayerCharacter : MonoBehaviour
         if (health == 0)
         {
             relativeMovement.SetMovement(false);
-            RayShooter.SetShooting(false);
+            //RayShooter.SetShooting(false);
+            SceneManager.LoadScene("win");
         }
     }
 
