@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class CollectibleCount : MonoBehaviour
+
 {
     TMPro.TMP_Text text;
     int count;
@@ -36,6 +37,8 @@ public class CollectibleCount : MonoBehaviour
         if (count == Collectible.total)
         {
             // RevealImage();
+            SceneManager.LoadScene("Win");
+            
 
 
             // ------ PUT WIN SCRIPT HERE ------

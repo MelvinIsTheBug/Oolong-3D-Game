@@ -31,8 +31,8 @@ public class RayShooter : MonoBehaviour
         cam = GetComponent<Camera>();
 
         //Hide the cursor at the center of the screen
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
 
         //transform.position = new Vector3(0, 0, 0);
         
